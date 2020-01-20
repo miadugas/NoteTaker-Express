@@ -23,3 +23,45 @@ fs.writeFileSync(
     }
 );
 };
+
+// these first app.get requests are for the html pages
+app.get("/assets/css/styles.css", function(req, res) {
+res.sendFile(path.join(__dirname, "/public/assets/css/styles.css"));
+});
+
+app.get("/assets/js/index.js", function(req, res) {
+res.sendFile(path.join(__dirname, "/public/assets/js/index.js"));
+});
+
+app.get("/", function(req, res) {
+res.sendFile(path.join(__dirname, "public/index.html"));
+});
+
+app.get("/notes", function(req, res) {
+res.sendFile(path.join(__dirname, "/public/notes.html"));
+});
+
+app.get("/api/notes", function(req, res) {
+return res.json(dbNotes);
+});
+// these requests are for posting and deleting the notes
+app.post("/api/notes", function(req, res) {
+let newNote = req.body;
+let id = dbNotes.length;
+newNote.id = id + 1;
+dbNotes.push(newNote);
+dbUpdate(dbNotes);
+return res.json(dbNotes);
+});
+
+app.delete("/api/notes/:id", (req, res) => {
+let id = req.params.id;
+let x = 1;
+delete dbNotes[id - 1];
+dbUpdate(dbNotes);
+res.send(dbNotes);
+});
+// listener!
+app.listen(PORT, function() {
+console.log("http://localhost:" + PORT);
+});
