@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/miadugas/NoteTaker-Express/issues"
   },
-  "homepage": "https://github.com/miadugas/NoteTaker-Express#readme"
+  "homepage": "https://github.com/miadugas/NoteTaker-Express#readme",
+  "keywords": [],
+  "dependencies": {
+    "db": "^1.1.1",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security"
+  }
 }
