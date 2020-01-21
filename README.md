@@ -6,7 +6,7 @@
  
  ![Image of NoteTaker Express- 1](https://github.com/miadugas/NoteTaker-Express/blob/master/notes1.png)
  
-  ![Image of NoteTaker Express- 2](#)
+  ![Image of NoteTaker Express- 2](https://github.com/miadugas/NoteTaker-Express/blob/master/notes2.png)
 
  Live App: https://miamianotetaker.herokuapp.com/
  
